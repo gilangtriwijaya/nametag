@@ -1,0 +1,55 @@
+# php -- Override untuk subfolder nametag (gunakan PHP 8.2)
+<IfModule mime_module>
+  RemoveHandler .php
+  RemoveHandler .phtml
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews -Indexes
+    RewriteEngine On
+    RewriteBase /anambas-id/
+
+    # Lindungi direktori/file sensitif (JANGAN blok 'storage' publik)
+    RewriteRule ^(?:vendor|bootstrap|config)(?:/|$) - [F,L]
+    # Blokir dotfiles (.env, .git, dsb)
+    RewriteRule "(^|/)\." - [F,L]
+    <FilesMatch "^(\.env|composer\.(json|lock)|artisan|phpunit\.xml|package(-lock)?\.json)$">
+        Require all denied
+    </FilesMatch>
+
+    # Jangan izinkan eksekusi PHP dari dalam storage publik
+    RewriteRule ^storage/.*\.(?:php|phtml|phar)$ - [F,L]
+
+    # Teruskan Authorization header (jika pakai bearer token/API)
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Hilangkan trailing slash jika bukan folder fisik
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)/$ $1 [R=301,L]
+
+    # Front controller Laravel
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# --- Performa aset Vite (aman untuk filename hashed di /build) ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+</IfModule>
+<IfModule mod_headers.c>
+    # Immutable untuk file hashed (css/js/font/svg)
+    <FilesMatch "\.(css|js|woff2?|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>

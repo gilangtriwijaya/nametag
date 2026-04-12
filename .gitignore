@@ -1,0 +1,42 @@
+# Dependencies
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+.venv/
+
+# Runtime data
+storage/logs/*
+storage/cache/*
+storage/sessions/*
+storage/framework/down
+
+# User-generated content
+public/uploads/*
+public/nametag/*
+public/qrcards/*
+public/*/
+!public/build/
+
+# Environment & Secrets
+.env
+.env.production
+.env.local
+.env.*.php
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Large files
+*.zip
+*.tar.gz
+*.log
+
+# Test
+coverage/
+.phpunit.result.cache

@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  rembg:
+    image: danielgatis/rembg
+    command: rembg serve --port 5000
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+          cpus: '1.0'

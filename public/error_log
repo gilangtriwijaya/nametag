@@ -1,0 +1,860 @@
+[11-Oct-2025 16:02:39 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:02:43 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:02:52 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:03:08 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:33:10 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:33:12 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:33:14 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:13 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:23 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:26 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:26 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:27 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:28 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:28 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 16:41:37 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:05:39 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:06:33 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:06:43 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:07:09 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:32:43 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:32:46 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:32:47 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:32:48 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[11-Oct-2025 17:51:01 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:959
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(959): ReflectionClass->__construct()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#12 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php:961
+Stack trace:
+#0 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(832): Illuminate\Container\Container->build()
+#1 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate\Container\Container->resolve()
+#2 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php(763): Illuminate\Foundation\Application->resolve()
+#3 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate\Container\Container->make()
+#4 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(124): Illuminate\Foundation\Application->make()
+#5 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(279): app()
+#6 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(806): config()
+#7 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#8 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#9 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(221): Illuminate\Foundation\Exceptions\Handler->render()
+#10 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(198): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#11 /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#13 {main}
+  thrown in /home/bagianorganisasi/laravel_nametag/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 961
+[13-Oct-2025 06:48:45 UTC] PHP Fatal error:  Cannot use Spatie\Permission\Models\Role as Role because the name is already in use in /home/bagianorganisasi/laravel_nametag/app/Http/Controllers/UserController.php on line 13
+[14-Oct-2025 08:26:50 UTC] PHP Fatal error:  Cannot declare class App\Http\Controllers\EmployeeController, because the name is already in use in /home/bagianorganisasi/laravel_nametag/app/Http/Controllers/QrController.php on line 15
+[15-Oct-2025 04:53:50 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bagianorganisasi/laravel_nametag/app/Services/PhotoBgService.php on line 368
+[15-Oct-2025 04:54:41 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bagianorganisasi/laravel_nametag/app/Services/PhotoBgService.php on line 368
+[15-Oct-2025 04:58:21 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bagianorganisasi/laravel_nametag/app/Services/PhotoBgService.php on line 375
+[15-Oct-2025 04:58:29 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bagianorganisasi/laravel_nametag/app/Services/PhotoBgService.php on line 362
+[22-Oct-2025 09:57:31 UTC] PHP Fatal error:  Cannot declare class App\Http\Controllers\Admin\NametagBatchController, because the name is already in use in /home/bagianorganisasi/laravel_nametag/app/Http/Controllers/NametagBatchController.php on line 14
+[28-Oct-2025 08:47:30 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 31
+[28-Oct-2025 08:47:31 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 39
+[28-Oct-2025 08:47:31 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 31
+[28-Oct-2025 08:47:31 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 39
+[28-Oct-2025 08:47:36 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 31
+[28-Oct-2025 08:47:36 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 39
+[28-Oct-2025 08:47:37 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 31
+[28-Oct-2025 08:47:37 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 39
+[28-Oct-2025 08:47:39 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 31
+[28-Oct-2025 08:47:39 UTC] PHP Warning:  Undefined variable $resolveOpdClass in /home/bagianorganisasi/laravel_nametag/bootstrap/app.php on line 39
+[29-Oct-2025 00:28:28 UTC] PHP Fatal error:  Cannot redeclare App\Models\Employee::opdUnit() in /home/bagianorganisasi/laravel_nametag/app/Models/Employee.php on line 149
+[29-Oct-2025 00:28:43 UTC] PHP Fatal error:  Cannot redeclare App\Models\Employee::opdUnit() in /home/bagianorganisasi/laravel_nametag/app/Models/Employee.php on line 149
+[26-Nov-2025 05:16:51 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Log as Log because the name is already in use in /home/bagianorganisasi/laravel_nametag/app/Http/Controllers/EmployeeController.php on line 17

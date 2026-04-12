@@ -1,0 +1,10 @@
+[Unit]
+Description=Run rembg idle stopper every minute
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+Persistent=true
+Unit=rembg-stop.service
+
+[Install]
+WantedBy=timers.target

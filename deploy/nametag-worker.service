@@ -1,0 +1,21 @@
+[Unit]
+Description=Nametag Queue Worker (Laravel)
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+Restart=always
+RestartSec=5
+WorkingDirectory=/home/deploy/apps/nametag
+# ExecStart: use absolute php path; adjust if PHP binary is elsewhere
+ExecStart=/usr/bin/php /home/deploy/apps/nametag/artisan queue:work database --queue=nametag --sleep=3 --tries=3 --timeout=1200 -vvv
+# If you need environment variables, set them here or use an EnvironmentFile with key=value pairs
+# Environment=APP_ENV=production
+# EnvironmentFile=/etc/default/nametag-worker
+
+# Optional: limit resource usage
+# MemoryLimit=512M
+
+[Install]
+WantedBy=multi-user.target

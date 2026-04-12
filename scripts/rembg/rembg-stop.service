@@ -1,0 +1,8 @@
+[Unit]
+Description=Stop rembg if idle
+Wants=rembg.service
+After=rembg.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/deploy/apps/nametag/scripts/rembg/stop-rembg-if-idle.sh 300
