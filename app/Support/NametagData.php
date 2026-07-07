@@ -42,17 +42,17 @@ class NametagData
 
     /**
      * Normalize gelar/back-degree strings with quote escape support.
-     * 
+     *
      * Features:
      * - After each dot, capitalize first letter and lowercase rest (standard rule)
      * - Comma-separated blocks are trimmed and joined with comma+space
      * - Content inside double quotes "..." is preserved as-is (escapes normalization)
-     * 
+     *
      * Examples:
      * - "S.I.KOM., M.KESOS" -> "S.I.Kom., M.Kesos"
      * - "S.\"IP\"" -> "S.IP" (quote escape: preserve uppercase)
      * - "S.I.\"P\"" -> "S.I.P" (mixed: apply rule to S and I, preserve P)
-     * 
+     *
      * @param string $s Input gelar string
      * @return string Normalized gelar
      */
@@ -61,52 +61,52 @@ class NametagData
         // Step 1: Extract and preserve content inside double quotes
         $preservedMap = [];
         $placeholder = '__PRESERVED_%d__';
-        
+
         $s = preg_replace_callback('/"([^"]*)"/', function($matches) use (&$preservedMap, $placeholder) {
             $idx = count($preservedMap);
             $key = sprintf($placeholder, $idx);
             $preservedMap[$key] = $matches[1];  // Store exact content inside quotes
             return $key;  // Replace with placeholder temporarily
         }, $s);
-        
+
         // Step 2: Apply normalization on remaining parts (split by comma)
         $parts = array_map('trim', explode(',', $s));
         $outParts = [];
-        
+
         foreach ($parts as $part) {
             if ($part === '') continue;
-            
+
             // split into segments separated by dots, but keep dots when rebuilding
             $segs = preg_split('/(\.)/u', $part, -1, PREG_SPLIT_DELIM_CAPTURE);
-            
+
             for ($i = 0; $i < count($segs); $i++) {
                 $seg = $segs[$i];
-                
+
                 // Skip dots
                 if ($seg === '.') continue;
                 if ($seg === '') continue;
-                
+
                 // If this segment is a placeholder (preserved content), keep as-is
                 if (preg_match('/__PRESERVED_\d+__/', $seg)) {
                     continue;  // Will be restored later
                 }
-                
+
                 // Otherwise, apply standard normalization: ucfirst(lowercase)
                 $seg = mb_strtolower($seg, 'UTF-8');
                 $segs[$i] = mb_convert_case(mb_substr($seg, 0, 1, 'UTF-8'), MB_CASE_UPPER, 'UTF-8')
                     . mb_substr($seg, 1, null, 'UTF-8');
             }
-            
+
             $outParts[] = implode('', $segs);
         }
-        
+
         $result = implode(', ', $outParts);
-        
+
         // Step 3: Restore preserved (quoted) content
         foreach ($preservedMap as $key => $value) {
             $result = str_replace($key, $value, $result);
         }
-        
+
         return $result;
     }
 
@@ -117,6 +117,7 @@ class NametagData
     {
         $opd  = $e->opd;      // relasi Employee->opd()
         $unit = $e->opdUnit;  // relasi Employee->opdUnit()
+        $isDinasPendidikan = $opd && stripos(trim((string) $opd->nama), 'dinas pendidikan') !== false;
 
         /**
          * ===== Aturan baru "Unit Kerja" =====
@@ -126,10 +127,13 @@ class NametagData
          */
         if ($unit && $e->opd_unit_id) {
             $unitDisplay = $unit->nama;
+            $unitCaseMode = $isDinasPendidikan ? 'none' : 'title';
         } elseif ($opd) {
             $unitDisplay = $opd->nama;
+            $unitCaseMode = 'title';
         } else {
             $unitDisplay = $e->nama_unit_opd ?: '-';
+            $unitCaseMode = 'title';
         }
 
         // Nama pegawai untuk bagian belakang: format "gelar_depan nama, gelar_belakang"
@@ -170,13 +174,14 @@ class NametagData
         $ttdNama    = $sekdaOpd?->pimpinan ?: null; // contoh: "Sahtiar"
         $ttdPangkat = $sekdaOpd?->pangkat  ?: null;
         $ttdNip     = $sekdaOpd?->nip      ?: null;
-        
+
         return [
             // biodata pegawai (dipakai oleh key val_*)
             'val_nama'   => $namaPegawai,
             'val_nip'    => $nipPegawai,
             'val_jab'    => $e->jabatan ?: '-',
             'val_unit'   => $unitDisplay,
+            'val_unit_case' => $unitCaseMode,
             'val_goldar' => $e->gol_darah ?: '-',
             'val_alamat' => $alamatDisplay,
 

@@ -100,7 +100,7 @@ class NametagRenderService
         // === TEXTS
         $textMap = \App\Support\NametagData::buildFront($e);
         // FIX: Use array_merge to create a COPY, not reference to config
-        // If we modify $items in-place (e.g., adding __scaled_px), 
+        // If we modify $items in-place (e.g., adding __scaled_px),
         // it must NOT affect the cached config for subsequent renders
         $items   = array_merge([], $cfgFront['texts'] ?? []);
 
@@ -319,11 +319,7 @@ class NametagRenderService
         }
 
         $out = $this->outputDir('front') . "/{$e->id}.png";
-        $ok  = imagepng($tpl, $out, 6);
-        if ($ok) {
-            $dpi = (int)config('nametag.dpi', 300);
-            $this->insertPngPhys($out, $dpi);
-        }
+        $ok  = $this->atomicImagePng($tpl, $out, 6);
         imagedestroy($tpl);
 
         Log::info('nametag: store result', [
@@ -332,6 +328,86 @@ class NametagRenderService
             'ok'          => $ok,
         ]);
         return (bool)$ok;
+    }
+
+    /**
+     * Write PNG to disk atomically: write to temp file in same directory,
+     * insert pHYs chunk, chmod and rename into place. Returns true on success.
+     */
+    private function atomicImagePng($imgResource, string $outPath, int $quality = 6): bool
+    {
+        $dir = dirname($outPath);
+        if (!is_dir($dir)) {
+            @mkdir($dir, 0755, true);
+        }
+
+        $tmp = @tempnam($dir, 'tmp_png_');
+        if ($tmp === false) {
+            Log::warning('nametag: atomicImagePng tempnam failed', [
+                'out' => $outPath,
+                'dir' => $dir,
+                'is_dir' => is_dir($dir),
+                'is_writable' => is_writable($dir),
+            ]);
+            return false;
+        }
+
+        // Attempt to write PNG to temp file
+        $ok = @imagepng($imgResource, $tmp, $quality);
+        if (! $ok) {
+            $err = error_get_last();
+            Log::warning('nametag: atomicImagePng imagepng write failed', [
+                'out' => $outPath,
+                'tmp' => $tmp,
+                'dir' => $dir,
+                'is_writable' => is_writable($dir),
+                'php_error' => $err,
+            ]);
+            @unlink($tmp);
+            return false;
+        }
+
+        // Insert pHYs into the temporary file (if configured)
+        $dpi = (int) config('nametag.dpi', 300);
+        try {
+            $this->insertPngPhys($tmp, $dpi);
+        } catch (\Throwable $_) {
+            // non-fatal
+        }
+
+        @chmod($tmp, 0644);
+
+        // Rename (atomic on same filesystem). If rename fails, try copy fallback.
+        if (@rename($tmp, $outPath)) {
+            return true;
+        }
+
+        $renameErr = error_get_last();
+        Log::warning('nametag: atomicImagePng rename failed, trying copy', [
+            'out' => $outPath,
+            'tmp' => $tmp,
+            'dir' => $dir,
+            'rename_err' => $renameErr,
+            'is_writable' => is_writable($dir),
+        ]);
+
+        if (@copy($tmp, $outPath)) {
+            Log::info('nametag: atomicImagePng copy fallback succeeded', ['out' => $outPath, 'tmp' => $tmp]);
+            @unlink($tmp);
+            return true;
+        }
+
+        $copyErr = error_get_last();
+        Log::error('nametag: atomicImagePng copy fallback failed', [
+            'out' => $outPath,
+            'tmp' => $tmp,
+            'dir' => $dir,
+            'copy_err' => $copyErr,
+            'is_writable' => is_writable($dir),
+        ]);
+
+        @unlink($tmp);
+        return false;
     }
 
     /**
@@ -413,7 +489,7 @@ class NametagRenderService
 
             $data  = \App\Support\NametagData::buildBack($e);
             // FIX: Use array_merge to create a COPY, not reference to config
-            // If we modify $items in-place (e.g., modifying text fields), 
+            // If we modify $items in-place (e.g., modifying text fields),
             // it must NOT affect the cached config for subsequent renders
             $items = array_merge([], $cfgBack['texts'] ?? []);
 
@@ -462,6 +538,9 @@ class NametagRenderService
                 $val = $it['text'] ?? ($key ? ($data[$key] ?? null) : null);
 
                 $caseMode = $it['case'] ?? (!empty($it['uppercase']) ? 'upper' : 'none');
+                if ($key === 'val_unit' && !empty($data['val_unit_case'])) {
+                    $caseMode = $data['val_unit_case'];
+                }
                     // NOTE: Gelar is already normalized at SAVE time by EmployeeService,
                     // so no need to normalize again here. Direct apply case transformation.
                     $val      = $this->applyCase($val, $caseMode);
@@ -713,7 +792,7 @@ class NametagRenderService
 
             // Blok TTD teks
             if (!empty($ttdBlk) && $slot) {
-            
+
             $fontColor       = '#111827';
             // positive = move title upward from signature box
             $titleOffsetUp   = (int)round(20 * $ppm);
@@ -865,11 +944,7 @@ class NametagRenderService
         }
 
         $out = $this->outputDir('back') . "/{$e->id}.png";
-        $ok  = imagepng($tpl, $out, 6);
-        if ($ok) {
-            $dpi = (int)config('nametag.dpi', 300);
-            $this->insertPngPhys($out, $dpi);
-        }
+        $ok  = $this->atomicImagePng($tpl, $out, 6);
         imagedestroy($tpl);
 
         Log::info('nametag: back store result', [

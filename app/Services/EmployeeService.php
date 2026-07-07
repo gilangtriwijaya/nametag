@@ -221,6 +221,15 @@ class EmployeeService
             }
 
             $v = trim((string) $data[$k]);
+
+            // Fix Cyrillic homoglyphs (often from OCR or copy-paste)
+            $homoglyphs = [
+                'р' => 'p', 'Р' => 'P', 'а' => 'a', 'А' => 'A', 'о' => 'o', 'О' => 'O',
+                'е' => 'e', 'Е' => 'E', 'с' => 'c', 'С' => 'C', 'у' => 'y', 'У' => 'Y',
+                'х' => 'x', 'Х' => 'X', 'і' => 'i', 'І' => 'I',
+            ];
+            $v = strtr($v, $homoglyphs);
+
             $v = preg_replace('/\s+/', ' ', $v);
             $v = preg_replace('/,+/', ',', $v);
             $v = preg_replace('/\s*,\s*/', ', ', $v);

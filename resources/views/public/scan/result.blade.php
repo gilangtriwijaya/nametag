@@ -185,7 +185,9 @@
           <dl class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
 
             <div>
-              <dt class="text-slate-500">NIP</dt>
+              <dt class="text-slate-500">
+                {{ (($data->employee_status_kepegawaian ?? '') === 'PPPK') ? 'NIPPPK' : 'NIP' }}
+              </dt>
               <dd class="font-mono">
                 {{ $formatNip($data->employee_nip ?? null) }}
               </dd>

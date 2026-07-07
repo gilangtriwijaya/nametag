@@ -15,38 +15,38 @@ class ScanController extends Controller
         $applySimpleTitleCase = function(?string $text): string {
             $s = (string)($text ?? '');
             if ($s === '') return $s;
-            
+
             // Extract and preserve content inside double quotes (WITHOUT the quotes)
             $preservedMap = [];
             $markerStart = chr(0);
             $markerEnd = chr(1);
-            
+
             $s = preg_replace_callback('/"([^"]*)"/', function($matches) use (&$preservedMap, $markerStart, $markerEnd) {
                 $idx = count($preservedMap);
                 $key = $markerStart . 'Q' . $idx . $markerEnd;
                 $preservedMap[$key] = $matches[1];
                 return $key;
             }, $s);
-            
+
             $gelarDepan = '';
             $namePart = $s;
-            
+
             if (preg_match('/^((?:[A-Za-z]{1,3}\.\s+|[A-Z][a-z]+\.\s+)+)(.*)$/u', $namePart, $m)) {
                 $gelarDepan = $m[1];
                 $namePart = $m[2];
             }
-            
+
             $namePart = mb_convert_case($namePart, MB_CASE_TITLE, 'UTF-8');
-            
+
             $result = $gelarDepan . $namePart;
-            
+
             foreach ($preservedMap as $key => $value) {
                 $result = str_replace($key, $value, $result);
             }
-            
+
             return $result;
         };
-        
+
         // Ambil data token + pegawai (tanpa merakit nama lengkap di SQL)
         $row = DB::table('employee_qr_tokens as t')
             ->join('employees as e', 'e.id', '=', 't.employee_id')
@@ -67,6 +67,7 @@ class ScanController extends Controller
                 e.jabatan         AS employee_position,
                 e.jabatan_type    AS position_type,
                 e.nama_unit_opd   AS nama_unit_opd,
+                e.status_kepegawaian AS employee_status_kepegawaian,
                 e.status_aktif    AS employee_active_status,
                 e.foto_path       AS foto_path,
 

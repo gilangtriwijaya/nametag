@@ -46,6 +46,39 @@
   </div>
 
   {{-- ====== LOG TERAKHIR + REKAP ====== --}}
+  @if(auth()->user()->isSuperAdmin() && isset($chartAdminOrganisasi) && (!empty($chartAdminOrganisasi['datasets_generate']) || !empty($chartAdminOrganisasi['datasets_aktivasi'])))
+  <div class="mt-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-card dark:bg-navy-800 dark:ring-slate-700">
+    <div class="flex items-center justify-between px-5 pt-5 mb-4 flex-wrap gap-3">
+      <div>
+        <h3 class="text-lg font-semibold" id="chartAdminTitle">Rekap Generate Nametag - Admin Organisasi (12 Bulan)</h3>
+        <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Hanya menampilkan admin dengan data &gt; 0</p>
+      </div>
+      {{-- Toggle bergaya Google Maps --}}
+      <div class="flex items-center rounded-xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden text-sm font-medium">
+        <button id="btnGenerate"
+          onclick="switchChart('generate')"
+          class="flex items-center gap-1.5 px-4 py-2 transition-all duration-200 bg-indigo-600 text-white">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 14h2v6h-6v-2h4v-4z"/>
+          </svg>
+          Generate Nametag
+        </button>
+        <button id="btnAktivasi"
+          onclick="switchChart('aktivasi')"
+          class="flex items-center gap-1.5 px-4 py-2 transition-all duration-200 bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-navy-700">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 13l4 4L19 7"/>
+          </svg>
+          Aktivasi Pegawai
+        </button>
+      </div>
+    </div>
+    <div class="px-5 pb-5 relative">
+      <canvas id="chartAdmin" height="80"></canvas>
+    </div>
+  </div>
+  @endif
+
   <div class="mt-6 grid gap-6 lg:grid-cols-3">
     {{-- Aktivitas terakhir --}}
     <div class="lg:col-span-2 rounded-2xl bg-white ring-1 ring-slate-200 shadow-card
@@ -171,5 +204,64 @@
         scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
       }
     });
+
+    // Chart Admin Organisasi – dual view (generate & aktivasi)
+    const adminData = @json($chartAdminOrganisasi ?? ['labels'=>[], 'datasets_generate'=>[], 'datasets_aktivasi'=>[]]);
+    const chartAdminCanvas = document.getElementById('chartAdmin');
+    const CHART_COLORS = ['#6366f1','#14b8a6','#f59e0b','#ef4444','#8b5cf6','#3b82f6','#ec4899','#84cc16'];
+
+    function buildDatasets(arr) {
+      return arr.map((ds, i) => ({
+        label: ds.label,
+        data: ds.data,
+        borderColor: CHART_COLORS[i % CHART_COLORS.length],
+        backgroundColor: CHART_COLORS[i % CHART_COLORS.length],
+        borderWidth: 2,
+        tension: 0.3,
+        fill: false,
+        pointRadius: 3,
+        pointHoverRadius: 5,
+      }));
+    }
+
+    let adminChart = null;
+    if (chartAdminCanvas) {
+      adminChart = new Chart(chartAdminCanvas.getContext('2d'), {
+        type: 'line',
+        data: { labels: adminData.labels, datasets: buildDatasets(adminData.datasets_generate || []) },
+        options: {
+          responsive: true,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { display: true, position: 'bottom' } },
+          scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
+        }
+      });
+    }
+
+    function switchChart(mode) {
+      if (!adminChart) return;
+      const titleEl = document.getElementById('chartAdminTitle');
+      const btnGen = document.getElementById('btnGenerate');
+      const btnAkt = document.getElementById('btnAktivasi');
+      const activeClass = ['bg-indigo-600','text-white'];
+      const inactiveClass = ['bg-white','dark:bg-navy-800','text-slate-600','dark:text-slate-300','hover:bg-slate-50','dark:hover:bg-navy-700'];
+
+      if (mode === 'generate') {
+        adminChart.data.datasets = buildDatasets(adminData.datasets_generate || []);
+        if (titleEl) titleEl.textContent = 'Rekap Generate Nametag - Admin Organisasi (12 Bulan)';
+        btnGen.className = btnGen.className.replace(/bg-white|dark:bg-navy-800|text-slate-600|dark:text-slate-300|hover:bg-slate-50|dark:hover:bg-navy-700/g,'').trim();
+        btnGen.classList.add('bg-indigo-600','text-white');
+        btnAkt.classList.remove('bg-indigo-600','text-white');
+        btnAkt.classList.add('bg-white','text-slate-600','hover:bg-slate-50');
+      } else {
+        adminChart.data.datasets = buildDatasets(adminData.datasets_aktivasi || []);
+        if (titleEl) titleEl.textContent = 'Rekap Aktivasi Pegawai - Admin Organisasi (12 Bulan)';
+        btnAkt.classList.remove('bg-white','text-slate-600','hover:bg-slate-50');
+        btnAkt.classList.add('bg-indigo-600','text-white');
+        btnGen.classList.remove('bg-indigo-600','text-white');
+        btnGen.classList.add('bg-white','text-slate-600','hover:bg-slate-50');
+      }
+      adminChart.update();
+    }
   </script>
 </x-layouts.admin>

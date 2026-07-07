@@ -40,6 +40,11 @@ class Kernel extends ConsoleKernel
         $schedule->command('session:check-health')->dailyAt('04:00')->onFailure(function () {
             \Illuminate\Support\Facades\Log::warning('[Scheduler] session:check-health failed');
         });
+
+        // Rebuild public statistik cache hourly
+        $schedule->command('statpub:rebuild')
+            ->hourly()
+            ->withoutOverlapping();
     }
 
     protected function commands(): void

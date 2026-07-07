@@ -247,14 +247,88 @@ class DashboardController extends Controller
             $chartLogins['series'][] = (int) ($loginDaily[$d] ?? 0);
         }
 
+        $chartAdminOrganisasi = ['labels' => [], 'datasets_generate' => [], 'datasets_aktivasi' => []];
+        if ($user->isSuperAdmin()) {
+            $adminRoles = ['org_admin', 'admin_organisasi', 'admin organisasi', 'admin bagor', 'org admin', 'org-admin', 'admin-organisasi', 'admin-bagor'];
+            
+            // Cek role yang benar-benar ada di DB untuk menghindari RoleDoesNotExist exception
+            $existingRoles = \Spatie\Permission\Models\Role::whereIn('name', $adminRoles)->pluck('name')->toArray();
+            
+            if (!empty($existingRoles)) {
+                $adminUsers = User::role($existingRoles)->get();
+                $adminIds = $adminUsers->pluck('id')->toArray();
+                
+                $startAdmin = Carbon::now()->startOfMonth()->subMonths(11);
+                
+                // ---- Dataset 1: Generate nametag (qr log) ----
+                $activities = Activity::where('log_name', 'qr')
+                    ->where('event', 'generated')
+                    ->where('causer_type', User::class)
+                    ->whereIn('causer_id', $adminIds)
+                    ->where('created_at', '>=', $startAdmin)
+                    ->selectRaw("causer_id, DATE_FORMAT(created_at, '%Y-%m') as ym, count(*) as c")
+                    ->groupBy('causer_id', 'ym')
+                    ->get();
+
+                // ---- Dataset 2: Aktivasi pegawai (employee update log, status=AKTIF) ----
+                $activitiesAktivasi = Activity::where('log_name', 'employee')
+                    ->where('event', 'update')
+                    ->where('causer_type', User::class)
+                    ->whereIn('causer_id', $adminIds)
+                    ->where('created_at', '>=', $startAdmin)
+                    ->whereRaw("JSON_UNQUOTE(JSON_EXTRACT(properties, '$.status')) = 'AKTIF'")
+                    ->selectRaw("causer_id, DATE_FORMAT(created_at, '%Y-%m') as ym, count(*) as c")
+                    ->groupBy('causer_id', 'ym')
+                    ->get();
+                    
+                // Prepare labels
+                for ($i = 0; $i < 12; $i++) {
+                    $point = (clone $startAdmin)->addMonths($i);
+                    $chartAdminOrganisasi['labels'][] = $point->isoFormat('MMM YY');
+                }
+                
+                // Prepare datasets
+                foreach ($adminUsers as $adminUser) {
+                    // Generate dataset
+                    $userActivities = $activities->where('causer_id', $adminUser->id);
+                    if ($userActivities->sum('c') > 0) {
+                        $data = [];
+                        for ($i = 0; $i < 12; $i++) {
+                            $ym = (clone $startAdmin)->addMonths($i)->format('Y-m');
+                            $data[] = (int) ($userActivities->firstWhere('ym', $ym)->c ?? 0);
+                        }
+                        $chartAdminOrganisasi['datasets_generate'][] = [
+                            'label' => $adminUser->name,
+                            'data'  => $data,
+                        ];
+                    }
+
+                    // Aktivasi dataset
+                    $userAktivasi = $activitiesAktivasi->where('causer_id', $adminUser->id);
+                    if ($userAktivasi->sum('c') > 0) {
+                        $dataAkt = [];
+                        for ($i = 0; $i < 12; $i++) {
+                            $ym = (clone $startAdmin)->addMonths($i)->format('Y-m');
+                            $dataAkt[] = (int) ($userAktivasi->firstWhere('ym', $ym)->c ?? 0);
+                        }
+                        $chartAdminOrganisasi['datasets_aktivasi'][] = [
+                            'label' => $adminUser->name,
+                            'data'  => $dataAkt,
+                        ];
+                    }
+                }
+            }
+        }
+
             return view('dashboard', [
-                'kpi'            => $kpi,
-                'logs'           => $logs,
-                'list'           => $list,
-                'listTitle'      => $listTitle,
-                'isGlobal'       => !$opdLocked,
-                'chartEmployees' => $chartEmployees,
-                'chartLogins'    => $chartLogins,
+                'kpi'                  => $kpi,
+                'logs'                 => $logs,
+                'list'                 => $list,
+                'listTitle'            => $listTitle,
+                'isGlobal'             => !$opdLocked,
+                'chartEmployees'       => $chartEmployees,
+                'chartLogins'          => $chartLogins,
+                'chartAdminOrganisasi' => $chartAdminOrganisasi,
             ]);
         } catch (\Throwable $e) {
             \Log::error('[Dashboard] Unhandled exception: '.$e->getMessage(), [

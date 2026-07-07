@@ -9,21 +9,22 @@ use App\Http\Middleware\ResolveOpdContext;
 use App\Http\Middleware\SessionHealthCheck;
 use App\Http\Middleware\DetectLoopAttempt;
 
-$spatieRole = class_exists(\Spatie\Permission\Middlewares\RoleMiddleware::class)
-    ? \Spatie\Permission\Middlewares\RoleMiddleware::class
-    : \Spatie\Permission\Middleware\RoleMiddleware::class;
+$spatieRole = class_exists('\\Spatie\\Permission\\Middlewares\\RoleMiddleware')
+    ? '\\Spatie\\Permission\\Middlewares\\RoleMiddleware'
+    : '\\Spatie\\Permission\\Middleware\\RoleMiddleware';
 
-$spatiePerm = class_exists(\Spatie\Permission\Middlewares\PermissionMiddleware::class)
-    ? \Spatie\Permission\Middlewares\PermissionMiddleware::class
-    : \Spatie\Permission\Middleware\PermissionMiddleware::class;
+$spatiePerm = class_exists('\\Spatie\\Permission\\Middlewares\\PermissionMiddleware')
+    ? '\\Spatie\\Permission\\Middlewares\\PermissionMiddleware'
+    : '\\Spatie\\Permission\\Middleware\\PermissionMiddleware';
 
-$spatieRoleOrPerm = class_exists(\Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class)
-    ? \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class
-    : \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class;
+$spatieRoleOrPerm = class_exists('\\Spatie\\Permission\\Middlewares\\RoleOrPermissionMiddleware')
+    ? '\\Spatie\\Permission\\Middlewares\\RoleOrPermissionMiddleware'
+    : '\\Spatie\\Permission\\Middleware\\RoleOrPermissionMiddleware';
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__ . '/../routes/web.php',
+        api: __DIR__ . '/../routes/api.php',
         commands: __DIR__ . '/../routes/console.php',
         health: '/up',
     )
@@ -40,7 +41,8 @@ return Application::configure(basePath: dirname(__DIR__))
 
             // OPD context
             'resolve.opd'        => ResolveOpdContext::class,
-            
+            'api.publik.key'     => \App\Http\Middleware\ValidasiApiKeyPublik::class,
+
             // Prevention (optional, use on specific routes only)
             'session.health'     => SessionHealthCheck::class,
             'detect.loop'        => DetectLoopAttempt::class,
