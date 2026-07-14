@@ -121,34 +121,72 @@ class EmployeeQueryService
         }
 
         // ===== Scope Unit Kerja =====
-        // Untuk akun level-unit, biasanya punya managedUnitIds().
-        $managedUnitIds = method_exists($user, 'managedUnitIds')
-            ? array_map('intval', (array) $user->managedUnitIds())
-            : [];
+        //
+        // ATURAN BISNIS:
+        // 1. User yang memiliki opd_unit_id (level unit) → SELALU scope ke unit sendiri,
+        //    apapun role-nya. Ini mencegah user unit melihat pegawai OPD induk / unit lain.
+        // 2. User tanpa opd_unit_id tapi punya role level-unit → scope ke managedUnitIds.
+        // 3. Admin OPD / Verifikator OPD → bisa lihat semua (termasuk pegawai tanpa unit).
+        // 4. Filter manual via dropdown ($unitId) → dipakai oleh super/org admin.
 
-        /**
-         * Catatan penting:
-         * - Admin OPD & Verifikator OPD: TIDAK boleh dibatasi ke unit saja,
-         *   supaya tetap bisa lihat pegawai level OPD (opd_unit_id NULL).
-         * - Admin Unit / Verifikator Unit: justru dibatasi ke unit yang dikelola.
-         *
-         * Karena di sini kita tidak punya helper isAdminUnit/isVerUnit,
-         * kita pakai logika:
-         *   "kalau dia punya managedUnitIds DAN bukan Super/Org/AdminOpd/VerOpd,
-         *    berarti dia akun level unit".
-         */
-        $isUnitLevelAccount = ! empty($managedUnitIds)
-            && ! ($isSuper || $isOrg || $isAdminOpd || $isVerOpd);
+        // Prioritas tertinggi: user punya opd_unit_id → scope langsung, abaikan role
+        $userOpdUnitId = $user->opd_unit_id ? (int) $user->opd_unit_id : null;
 
-        if ($isUnitLevelAccount) {
-            // Admin Unit / Verifikator Unit → hanya pegawai di unit yang dikelola
-            $builder->whereIn('employees.opd_unit_id', $managedUnitIds);
-        } elseif ($unitId) {
-            // Filter manual via dropdown (misal superadmin pilih Unit tertentu)
-            $builder->where('employees.opd_unit_id', (int) $unitId);
-        } elseif ($opdParentOnly && $opdId) {
-            // Filter untuk menampilkan hanya pegawai dari OPD induk (tanpa unit OPD)
-            $builder->whereNull('employees.opd_unit_id');
+        if ($userOpdUnitId && ! ($isSuper || $isOrg)) {
+            // User level unit: hanya tampilkan pegawai di unit milik user sendiri.
+            // Pegawai OPD induk (opd_unit_id NULL) dan unit lain dalam OPD yang sama
+            // TIDAK ditampilkan.
+            $builder->where('employees.opd_unit_id', $userOpdUnitId);
+
+            \Log::debug('EmployeeQueryService: scope ke unit user', [
+                'user_id'       => $user->id,
+                'opd_unit_id'   => $userOpdUnitId,
+            ]);
+        } else {
+            // Tidak ada opd_unit_id: cek apakah user level unit berdasarkan role
+            $managedUnitIds = method_exists($user, 'managedUnitIds')
+                ? array_map('intval', (array) $user->managedUnitIds())
+                : [];
+
+            /**
+             * Catatan penting:
+             * - Admin OPD & Verifikator OPD: TIDAK boleh dibatasi ke unit saja,
+             *   supaya tetap bisa lihat pegawai level OPD (opd_unit_id NULL).
+             * - Admin Unit / Verifikator Unit (tanpa opd_unit_id di kolom users):
+             *   dibatasi ke unit yang dikelola via managedUnitIds.
+             * - Role 'opd' (tanpa opd_unit_id): ini adalah user unit yang data-nya
+             *   belum lengkap. Fallback: scope ke managedUnitIds agar tidak tampil semua.
+             */
+            $isUnitLevelByRole = $this->hasAnyRoleInsensitive($user, [
+                'admin unit', 'admin-unit', 'admin_unit',
+                'verifikator unit', 'verifikator-unit', 'verifikator_unit',
+                // 'opd' adalah role untuk user level unit (Puskesmas, RSUD, Sekolah, dll.)
+                // Jika opd_unit_id kosong (data belum diset), fallback pakai managedUnitIds
+                'opd',
+            ]) && ! ($isSuper || $isOrg);
+
+            // managedUnitIds hanya relevan jika bukan level OPD global dan bukan super/org
+            $isUnitLevelAccount = $isUnitLevelByRole
+                && ! empty($managedUnitIds)
+                && ! ($isAdminOpd || $isVerOpd);
+
+            if ($isUnitLevelAccount) {
+                // Role unit tanpa opd_unit_id di kolom → scope ke unit-unit dalam OPD
+                // (bukan semua pegawai OPD — setidaknya hanya unit-unit yang ada)
+                $builder->whereIn('employees.opd_unit_id', $managedUnitIds);
+
+                \Log::debug('EmployeeQueryService: fallback scope ke managedUnitIds', [
+                    'user_id'         => $user->id,
+                    'user_name'       => $user->name,
+                    'managedUnitIds'  => $managedUnitIds,
+                ]);
+            } elseif ($unitId) {
+                // Filter manual via dropdown (misal superadmin pilih Unit tertentu)
+                $builder->where('employees.opd_unit_id', (int) $unitId);
+            } elseif ($opdParentOnly && $opdId) {
+                // Filter untuk menampilkan hanya pegawai dari OPD induk (tanpa unit OPD)
+                $builder->whereNull('employees.opd_unit_id');
+            }
         }
 
         // ===== Filter Unit Kerja (normalized) =====

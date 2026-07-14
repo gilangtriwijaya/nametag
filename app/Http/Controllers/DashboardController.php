@@ -246,7 +246,7 @@ class DashboardController extends Controller
             $chartLogins['labels'][] = Carbon::parse($d)->isoFormat('DD MMM');
             $chartLogins['series'][] = (int) ($loginDaily[$d] ?? 0);
         }
-
+        
         $chartAdminOrganisasi = ['labels' => [], 'datasets_generate' => [], 'datasets_aktivasi' => []];
         if ($user->isSuperAdmin()) {
             $adminRoles = ['org_admin', 'admin_organisasi', 'admin organisasi', 'admin bagor', 'org admin', 'org-admin', 'admin-organisasi', 'admin-bagor'];
