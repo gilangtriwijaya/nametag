@@ -270,13 +270,14 @@ class DashboardController extends Controller
                     ->groupBy('causer_id', 'ym')
                     ->get();
 
-                // ---- Dataset 2: Aktivasi pegawai (employee update log, status=AKTIF) ----
+                // ---- Dataset 2: Aktivasi pegawai (employee activate log) ----
+                // Event 'activate' dicatat oleh EmployeeOrchestrator::audit() saat pegawai diaktifkan.
+                // Bukan 'update' — karena 'update' menangkap semua edit termasuk edit jabatan pada pegawai aktif.
                 $activitiesAktivasi = Activity::where('log_name', 'employee')
-                    ->where('event', 'update')
+                    ->where('event', 'activate')
                     ->where('causer_type', User::class)
                     ->whereIn('causer_id', $adminIds)
                     ->where('created_at', '>=', $startAdmin)
-                    ->whereRaw("JSON_UNQUOTE(JSON_EXTRACT(properties, '$.status')) = 'AKTIF'")
                     ->selectRaw("causer_id, DATE_FORMAT(created_at, '%Y-%m') as ym, count(*) as c")
                     ->groupBy('causer_id', 'ym')
                     ->get();
