@@ -121,6 +121,7 @@ class EmployeeOrchestrator
                 ! $request->hasFile('foto')
                 && ! $hasCleanedInput
                 && $oldJabatan !== $employee->jabatan_type
+                && ! $employee->foto_is_manual
             ) {
                 $this->photo->syncBackgroundByJabatan($employee);
             }
@@ -210,29 +211,39 @@ class EmployeeOrchestrator
     {
         $cleanedRelPath = trim((string) $request->input('foto_path', ''));
         $hasUpload      = $request->hasFile('foto');
+        $isManual       = $request->boolean('foto_is_manual');
 
         if (! $hasUpload && $cleanedRelPath === '') {
+            if ($request->has('foto_is_manual') && $employee->foto_is_manual !== $isManual) {
+                $employee->foto_is_manual = $isManual;
+                $employee->save();
+            }
             return;
         }
 
-        $ok = $this->photo->uploadAndProcess(
-            $hasUpload ? $request->file('foto') : null,
-            $employee,
-            [
-                'x' => $request->integer('crop_x'),
-                'y' => $request->integer('crop_y'),
-                'w' => $request->integer('crop_width'),
-                'h' => $request->integer('crop_height'),
-            ],
-            $cleanedRelPath !== '' ? $cleanedRelPath : null
-        );
+        if ($isManual && $hasUpload) {
+            $ok = $this->photo->saveManualFinalPhoto($request->file('foto'), $employee);
+        } else {
+            $ok = $this->photo->uploadAndProcess(
+                $hasUpload ? $request->file('foto') : null,
+                $employee,
+                [
+                    'x' => $request->integer('crop_x'),
+                    'y' => $request->integer('crop_y'),
+                    'w' => $request->integer('crop_width'),
+                    'h' => $request->integer('crop_height'),
+                ],
+                $cleanedRelPath !== '' ? $cleanedRelPath : null
+            );
+        }
 
         if (! $ok) {
             throw new \RuntimeException('Gagal memproses foto pegawai.');
         }
 
         if (
-            $cleanedRelPath === ''
+            ! $isManual
+            && $cleanedRelPath === ''
             && ($oldJabatan === null || $oldJabatan !== $employee->jabatan_type)
         ) {
             $this->photo->syncBackgroundByJabatan($employee);

@@ -46,6 +46,7 @@ class Employee extends Model
         'tgl_lahir',
         'alamat',
         'foto_path',
+        'foto_is_manual',
         'sk_file_path',
         'sk_uploaded_at',
         'created_by',
@@ -74,6 +75,7 @@ class Employee extends Model
         'tmt_jabatan'    => 'date',
         'tgl_lahir'      => 'date',
         'sk_uploaded_at' => 'datetime',
+        'foto_is_manual' => 'boolean',
     ];
 
     /**

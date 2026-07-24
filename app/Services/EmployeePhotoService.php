@@ -39,6 +39,63 @@ class EmployeePhotoService
         );
     }
 
+    /**
+     * Save a manual final photo directly to uploads/derived/employees/final/{uuid}.png
+     * bypassing rembg & background composition.
+     */
+    public function saveManualFinalPhoto(UploadedFile $file, Employee $employee): bool
+    {
+        $finalDir = public_path('uploads/derived/employees/final');
+        File::ensureDirectoryExists($finalDir);
+
+        $uuid = (string) Str::uuid();
+        $ext = strtolower($file->getClientOriginalExtension() ?: 'png');
+        if (! in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
+            $ext = 'png';
+        }
+
+        $finalFileName = "{$uuid}.{$ext}";
+        $finalPath = "{$finalDir}/{$finalFileName}";
+
+        $file->move($finalDir, $finalFileName);
+
+        if (! is_file($finalPath)) {
+            return false;
+        }
+
+        if ($employee->foto_path) {
+            $oldPath = public_path(ltrim($employee->foto_path, '/'));
+            if (is_file($oldPath)) {
+                @unlink($oldPath);
+            }
+        }
+
+        $employee->foto_path = "uploads/derived/employees/final/{$finalFileName}";
+        $employee->foto_is_manual = true;
+        $employee->updated_by = Auth::id();
+        $employee->save();
+
+        $cache = app(ImageCacheService::class);
+        $meta = [
+            'pipeline' => 'employee_photo_manual',
+            'version' => config('photo_pipeline.version', '3.1.0'),
+            'manual_override' => true,
+            'created_at' => gmdate('c'),
+        ];
+        try {
+            $cache->writeManifest($finalPath, $meta);
+        } catch (\Throwable $e) {
+            // ignore
+        }
+
+        Log::info('Employee photo saved manually (bypass rembg)', [
+            'employee_id' => $employee->id,
+            'path' => $employee->foto_path,
+        ]);
+
+        return true;
+    }
+
     public function syncBackgroundByJabatan(Employee $employee): bool
     {
         if (! $employee->foto_path) {
@@ -82,6 +139,10 @@ class EmployeePhotoService
     public function ensureProcessed(Employee $employee): bool
     {
         if (! $employee->foto_path) return false;
+        if ($employee->foto_is_manual) {
+            Log::info('ensureProcessed: skipped manual override photo', ['employee_id' => $employee->id]);
+            return true;
+        }
 
         $src = public_path(ltrim($employee->foto_path, '/'));
         if (!is_file($src)) {
@@ -320,6 +381,7 @@ class EmployeePhotoService
             }
 
             $employee->foto_path  = "uploads/employees/" . basename($final);
+            $employee->foto_is_manual = false;
             $employee->updated_by = Auth::id();
             $employee->save();
 

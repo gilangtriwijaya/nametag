@@ -396,8 +396,24 @@
       {{-- Hidden field to persist cleaned image path for server save --}}
       <input type="hidden" name="foto_path" x-ref="fotoPath" value="">
 
-      <p class="text-xs mt-1 {{ $errors->has('foto') ? 'text-red-600' : 'text-slate-500' }}">
-        Format: JPG/PNG/WebP, maks 2 MB. {{ $isEdit ? 'Kosongkan jika tidak mengganti.' : '' }}
+      {{-- Checkbox foto final manual (bypass rembg) --}}
+      <div class="mt-2.5 flex items-start gap-2 bg-blue-50/70 p-2.5 rounded border border-blue-100">
+        <input type="checkbox"
+               name="foto_is_manual"
+               id="foto_is_manual"
+               value="1"
+               {{ old('foto_is_manual', $val('foto_is_manual')) ? 'checked' : '' }}
+               class="mt-0.5 rounded text-blue-600 focus:ring-blue-500">
+        <label for="foto_is_manual" class="text-xs text-slate-700 font-medium cursor-pointer">
+          Foto ini sudah final (Siap Pakai / Bypass Pemotong AI & Warna Background)
+          <span class="block text-[11px] text-slate-500 font-normal mt-0.5">
+            Centang jika foto yang diunggah sudah dipotong dan diberi background sesuai tipe jabatan. Foto akan langsung disimpan tanpa diolah oleh sistem AI.
+          </span>
+        </label>
+      </div>
+
+      <p class="text-xs mt-2 {{ $errors->has('foto') ? 'text-red-600' : 'text-slate-500' }}">
+        Format: JPG/PNG/WebP, maks 5 MB. {{ $isEdit ? 'Kosongkan jika tidak mengganti.' : '' }}
       </p>
       @error('foto') <p class="text-xs text-red-600 mt-1">{{ $message }}</p> @enderror
 

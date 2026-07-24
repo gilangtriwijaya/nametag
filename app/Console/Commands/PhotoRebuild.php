@@ -31,6 +31,11 @@ class PhotoRebuild extends Command
         $this->info('Starting rebuild...');
         $q->chunkById(100, function($rows) use ($proc) {
             foreach ($rows as $e) {
+                if ($e->foto_is_manual) {
+                    $this->warn("skip {$e->id}: foto manual override");
+                    continue;
+                }
+
                 $src = public_path(ltrim((string)$e->foto_path, '/'));
                 if (!is_file($src)) {
                     // try originals
